@@ -35,6 +35,12 @@ OSCD.v2i.yolov8-obb/
 *.mp4
 *.avi
 
+# Scripts to ignore
+fix_labels.py
+merge_dataset.py
+test.py
+tor.py
+
 # IDE
 .vscode/
 .idea/

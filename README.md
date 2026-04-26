@@ -1,6 +1,14 @@
 # 🔍 DAMAGE – CV Pipeline for Damage Detection
 
-A modular, real-time computer vision pipeline for detecting and tracking physical damage (dents, scratches, cracks, deformations) using a fine-tuned **YOLOv8** model.
+A modular, real-time computer vision pipeline for detecting and tracking damaged vs. undamaged parcels using a fine-tuned **YOLOv8** model.
+
+## ⚡ Quick demo (3 commands)
+
+```bash
+pip install -r requirements.txt
+python main.py --source demo/box_damaged.jpg     # single image
+python main.py --source 0                        # live webcam
+```
 
 ---
 
@@ -87,9 +95,9 @@ pip install -r requirements.txt
 
 ### Run on an image
 ```bash
-python main.py --source "image.jpg"
+python main.py --source demo/box_damaged.jpg
 ```
-Press **any key** to close the result window.
+Press **any key** to close the result window. Other staged samples: `demo/sample_1.jpg`, `demo/sample_2.jpg`, `demo/sample_3.jpg`.
 
 ### Run on a video file
 ```bash
@@ -153,14 +161,14 @@ ModelLoader ──► DamageDetector ──► CentroidTracker
 
 ## 🏷️ Damage Classes
 
+The shipped `best.pt` is trained on the `balanced_dataset` (2 classes):
+
 | ID | Class | Colour |
 |---|---|---|
-| 0 | dent | 🟠 Orange |
-| 1 | scratch | 🟢 Green |
-| 2 | crack | 🔴 Red |
-| 3 | deformation | 🟣 Magenta |
+| 0 | undamaged | 🟢 Green |
+| 1 | damaged   | 🔴 Red   |
 
-> Update `CLASS_NAMES` and `CLASS_COLORS` in `core/config.py` to match your trained model's labels.
+> Re-training with different labels? Update `CLASS_NAMES` and `CLASS_COLORS` in `core/config.py` to match.
 
 ---
 

@@ -7,7 +7,7 @@ import os
 # ── Model ────────────────────────────────────────────────────────────────────
 MODEL_PATH = os.path.join(
     os.path.dirname(os.path.dirname(__file__)),
-    "runs", "detect", "train2", "weights", "best.pt"
+    "models", "best.pt"
 )
 
 # ── Detection ─────────────────────────────────────────────────────────────────
@@ -16,20 +16,16 @@ IOU_THRESHOLD        = 0.45
 IMGSZ                = 640
 DEVICE               = "cpu"   # change to "cuda" if GPU is available
 
-# ── Class labels (update to match your trained model) ─────────────────────────
+# ── Class labels (must match the trained model in models/best.pt) ────────────
 CLASS_NAMES = {
-    0: "dent",
-    1: "scratch",
-    2: "crack",
-    3: "deformation",
+    0: "undamaged",
+    1: "damaged",
 }
 
 # ── Colours per class (BGR) ───────────────────────────────────────────────────
 CLASS_COLORS = {
-    0: (0,   165, 255),   # orange  – dent
-    1: (0,   255, 0  ),   # green   – scratch
-    2: (0,   0,   255),   # red     – crack
-    3: (255, 0,   255),   # magenta – deformation
+    0: (0, 200, 0),     # green – undamaged
+    1: (0, 0, 255),     # red   – damaged
 }
 
 # ── Tracking ──────────────────────────────────────────────────────────────────

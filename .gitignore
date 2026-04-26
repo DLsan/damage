@@ -34,6 +34,9 @@ OSCD.v2i.yolov8-obb/
 *.png
 *.mp4
 *.avi
+!demo/*.jpg
+!demo/*.png
+!demo/*.mp4
 
 # Scripts to ignore
 fix_labels.py
@@ -44,6 +47,7 @@ tor.py
 # IDE
 .vscode/
 .idea/
+.claude/
 *.code-workspace
 
 # OS

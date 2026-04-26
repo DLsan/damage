@@ -15,6 +15,7 @@ env/
 
 # Model weights
 *.pt
+!models/best.pt
 *.pth
 *.onnx
 
